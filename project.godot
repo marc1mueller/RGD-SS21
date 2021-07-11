@@ -18,10 +18,9 @@ config/icon="res://Sprites/icon.png"
 
 window/size/width=480
 window/size/height=270
-window/size/test_width=1600
-window/size/test_height=900
+window/size/test_width=960
+window/size/test_height=540
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [physics]
 
