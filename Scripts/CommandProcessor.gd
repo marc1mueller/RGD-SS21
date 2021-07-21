@@ -1,7 +1,6 @@
 extends Node
 
-func process_command(input: String):
-	return "some outputya"
+func process_command(input: String) -> String:
 	var words = input.split(" ", false)
 	if words.size() == 0:
 		printerr("Error: no words found!")
@@ -12,62 +11,59 @@ func process_command(input: String):
 		second_word = words[1].to_lower()
 	match first_word:
 		"moveto":
-			moveto(second_word)
+			return moveto(second_word)
 		"interactwith":
-			interactwith(second_word)
+			return interactwith(second_word)
 		"take":
-			take(second_word)
+			return take(second_word)
 		"use":
-			use(second_word)
+			return use(second_word)
 		"stash":
-			stash(second_word)
+			return stash(second_word)
 		"equip":
-			equip(second_word)
-			
+			return equip(second_word)
 		"combinexwithy":
-			combinexwithy(second_word, second_word)
-			
-			
+			return combinexwithy(second_word, second_word)
 		"help":
-			help()
+			return help()
 		_:
 			return "Unknown command - please try again!"
 
 
-func moveto(second_word: String):
+func moveto(second_word: String) -> String:
 	if second_word == "":
 		return "Please move to some object..."
 	return "you move to %s" % second_word
 
-func interactwith(second_word: String):
+func interactwith(second_word: String) -> String:
 	if second_word == "":
 		return "Please do interaction with Person/Object?"
 	return "your interaction with %s" %second_word
 
-func take(second_word: String):
+func take(second_word: String) -> String:
 	if second_word == "":
 		return "Please take some object"
 	return "you have taken %s" %second_word
 
-func use(second_word: String):
+func use(second_word: String) -> String:
 	if second_word == "":
 		return "Please use the object"
 	return "you have used %s" %second_word
 	
-func stash(second_word: String):
+func stash(second_word: String) -> String:
 	if second_word == "":
 		return "please stow away the Items"
 	return "you have stash your items%" %second_word
 
-func equip(second_word: String):
+func equip(second_word: String) -> String:
 	if second_word == "":
 		return "please equip the objects"
 	return "you have equiped %s" %second_word
 
-func combinexwithy(second_word: String, some_other_String):
+func combinexwithy(second_word: String, some_other_String) -> String:
 	if second_word == "":
 		return "Please combine x with y"
 	return"you have combined %s %s" % [second_word, some_other_String]
 
-func help():
+func help() -> String:
 	return "you can use these commands 1.moveto [location], interactwith [person/object], take [object], use [object], stash [object], equip [object], combinexwithy [x object + y object]"

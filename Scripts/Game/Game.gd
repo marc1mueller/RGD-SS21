@@ -12,3 +12,4 @@ func _on_Input_text_entered(new_text: String) -> void:
 		return
 	
 	var response = command_processor.process_command(new_text)
+	print(response)
