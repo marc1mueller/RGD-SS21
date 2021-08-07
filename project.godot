@@ -9,20 +9,37 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://Scripts/Items/Inventory.gd"
+}, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Scripts/Items/Item.gd"
+}, {
 "base": "Node2D",
 "class": "Room",
 "language": "GDScript",
-"path": "res://Scripts/Room.gd"
+"path": "res://Scripts/Room/Room.gd"
+}, {
+"base": "Node2D",
+"class": "Room_position",
+"language": "GDScript",
+"path": "res://Scripts/Room/Position.gd"
 } ]
 _global_script_class_icons={
-"Room": ""
+"Inventory": "",
+"Item": "",
+"Room": "",
+"Room_position": ""
 }
 
 [application]
 
 config/name="RGD_Placeholder"
 run/main_scene="res://Scenes/Game.tscn"
-config/icon="res://Sprites/icon.png"
 
 [display]
 
@@ -31,6 +48,29 @@ window/size/height=270
 window/size/test_width=960
 window/size/test_height=540
 window/stretch/mode="viewport"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [physics]
 
