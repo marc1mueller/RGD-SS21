@@ -12,26 +12,32 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
-"path": "res://Scripts/Items/Inventory.gd"
+"path": "res://src/Inventory/Inventory.gd"
 }, {
 "base": "Resource",
 "class": "Item",
 "language": "GDScript",
-"path": "res://Scripts/Items/Item.gd"
+"path": "res://src/Items/Item.gd"
+}, {
+"base": "Item",
+"class": "Ring",
+"language": "GDScript",
+"path": "res://src/Items/Ring/Ring.gd"
 }, {
 "base": "Node2D",
 "class": "Room",
 "language": "GDScript",
-"path": "res://Scripts/Room/Room.gd"
+"path": "res://src/Room/Room.gd"
 }, {
 "base": "Node2D",
 "class": "Room_position",
 "language": "GDScript",
-"path": "res://Scripts/Room/Position.gd"
+"path": "res://src/Room/Position.gd"
 } ]
 _global_script_class_icons={
 "Inventory": "",
 "Item": "",
+"Ring": "",
 "Room": "",
 "Room_position": ""
 }
@@ -39,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="RGD_Placeholder"
-run/main_scene="res://Scenes/Game.tscn"
+run/main_scene="res://src/Game/Game.tscn"
 
 [display]
 
