@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/einzel_slot.png-ac76665000e47216c9468838c8a64bd6.stex"
+path="res://.import/Panel.png-91a57fe316f83f2ab1ac94a3624b6f11.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Iventory/einzel_slot.png"
-dest_files=[ "res://.import/einzel_slot.png-ac76665000e47216c9468838c8a64bd6.stex" ]
+source_file="res://assets/Sprites/Inventory/Panel.png"
+dest_files=[ "res://.import/Panel.png-91a57fe316f83f2ab1ac94a3624b6f11.stex" ]
 
 [params]
 

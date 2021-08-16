@@ -24,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Items/Ring/Ring.gd"
 }, {
-"base": "Node2D",
+"base": "Node",
 "class": "Room",
 "language": "GDScript",
 "path": "res://src/Room/Room.gd"
@@ -45,7 +45,11 @@ _global_script_class_icons={
 [application]
 
 config/name="RGD_Placeholder"
-run/main_scene="res://src/Game/Game.tscn"
+run/main_scene="res://src/Room/Rooms/Room.tscn"
+
+[autoload]
+
+SceneLoader="*res://src/UI/SceneLoader.tscn"
 
 [display]
 

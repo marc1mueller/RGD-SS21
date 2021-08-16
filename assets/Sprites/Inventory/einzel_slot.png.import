@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coin.png-88b00c41b3cf2d36ca099ce306579d58.stex"
+path="res://.import/einzel_slot.png-561e5fe5d3c9b572b440560a381ef2a3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Dummys/Icons/coin.png"
-dest_files=[ "res://.import/coin.png-88b00c41b3cf2d36ca099ce306579d58.stex" ]
+source_file="res://assets/Sprites/Inventory/einzel_slot.png"
+dest_files=[ "res://.import/einzel_slot.png-561e5fe5d3c9b572b440560a381ef2a3.stex" ]
 
 [params]
 

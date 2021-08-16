@@ -23,5 +23,6 @@ func _process(delta: float) -> void:
 func _on_Input_text_entered(new_text: String) -> void:
 	if new_text.empty():
 		return
+	
 	history.push_front(new_text)
 	clear()

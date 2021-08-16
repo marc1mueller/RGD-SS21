@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/itembar.png-ad770af35f238871028b3e34d08912b8.stex"
+path="res://.import/itembar.png-e1a340c198470bd3797382365d15cca0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Iventory/itembar.png"
-dest_files=[ "res://.import/itembar.png-ad770af35f238871028b3e34d08912b8.stex" ]
+source_file="res://assets/Sprites/Inventory/itembar.png"
+dest_files=[ "res://.import/itembar.png-e1a340c198470bd3797382365d15cca0.stex" ]
 
 [params]
 

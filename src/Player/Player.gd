@@ -1,7 +1,11 @@
 extends KinematicBody2D
 
+onready var animation_tree = $AnimationTree
+
 var speed := 100
 var path := PoolVector2Array() setget set_path
+
+var look_at: Vector2
 
 func _ready() -> void:
 	set_process(false)
@@ -16,15 +20,16 @@ func move_along_path(distance: float) -> void:
 	var start_point = position
 	for i in range(path.size()):
 		var distance_to_next = start_point.distance_to(path[0])
+		
 		if distance <= distance_to_next && distance >= 0.0:
 			var direction_vector = (path[0] - global_position)
-			$AnimationTree.get("parameters/playback").travel("Move")
-			$AnimationTree.set("parameters/Idle/blend_position", direction_vector)
-			$AnimationTree.set("parameters/Move/blend_position", direction_vector)
+			animation_tree.get("parameters/playback").travel("Move")
+			animation_tree.set("parameters/Move/blend_position", direction_vector)
 			position = start_point.linear_interpolate(path[0], distance / distance_to_next)
 			break
 		elif path.size() == 1 && distance > distance_to_next:
-			$AnimationTree.get("parameters/playback").travel("Idle")
+			animation_tree.get("parameters/playback").travel("Idle")
+			animation_tree.set("parameters/Idle/blend_position", look_at)
 			position = path[0]
 			set_process(false)
 			break
