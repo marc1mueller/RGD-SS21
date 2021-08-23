@@ -18,9 +18,9 @@
 [ext_resource path="res://assets/Sprites/Rooms/Kitchen/table.png" type="Texture" id=16]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 144, 112, 176, 112, 176, 124, 144, 192, 192, 192, 192, 160, 344, 124, 238, 160, 344, 192, 238, 192 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 3, 2, 5 ), PoolIntArray( 5, 2, 6, 7 ), PoolIntArray( 7, 6, 8, 9 ) ]
-outlines = [ PoolVector2Array( 144, 112, 144, 192, 192, 192, 192, 160, 238, 160, 238, 192, 344, 192, 344, 124, 176, 124, 176, 112 ) ]
+vertices = PoolVector2Array( 243, 178, 404, 206, 84, 206, 197, 178, 84, 107, 197, 154, 404, 107, 243, 154 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 2, 4, 5 ), PoolIntArray( 5, 4, 6, 7 ), PoolIntArray( 7, 6, 1, 0 ) ]
+outlines = [ PoolVector2Array( 84, 107, 84, 206, 404, 206, 404, 107 ), PoolVector2Array( 197, 154, 197, 178, 243, 178, 243, 154 ) ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 7, 4 )
@@ -258,23 +258,23 @@ navpoly = SubResource( 1 )
 [node name="Positions" type="Node2D" parent="."]
 
 [node name="Fridge" type="Node2D" parent="Positions"]
-position = Vector2( 196, 128 )
+position = Vector2( 200, 112 )
 script = ExtResource( 4 )
 player_look_direction = Vector2( 0, -1 )
 
 [node name="Oven" type="Node2D" parent="Positions"]
-position = Vector2( 290, 128 )
+position = Vector2( 296, 112 )
 script = ExtResource( 4 )
 player_look_direction = Vector2( 0, -1 )
 
 [node name="Table" type="Node2D" parent="Positions"]
-position = Vector2( 184, 176 )
+position = Vector2( 216, 144 )
 script = ExtResource( 4 )
-player_look_direction = Vector2( 1, 0 )
+player_look_direction = Vector2( 0, 1 )
 
 [node name="Exit" parent="Positions" instance=ExtResource( 3 )]
-position = Vector2( 336, 170 )
-player_look_direction = Vector2( 1, 0 )
+position = Vector2( 88, 168 )
+player_look_direction = Vector2( -1, 0 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -311,7 +311,7 @@ parameters/Idle/blend_position = Vector2( 0.218997, -0.528926 )
 parameters/Move/blend_position = Vector2( 0, 0 )
 
 [node name="Table" type="Sprite" parent="YSort"]
-position = Vector2( 216, 168 )
+position = Vector2( 220, 161 )
 texture = ExtResource( 16 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
