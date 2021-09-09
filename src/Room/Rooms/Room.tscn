@@ -438,5 +438,5 @@ margin_right = 201.0
 margin_bottom = 20.0
 custom_constants/separation = 2
 
-[connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CommandProcessor" method="_on_Input_text_entered"]
 [connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]
+[connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CommandProcessor" method="_on_Input_text_entered"]
