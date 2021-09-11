@@ -15,6 +15,9 @@ func _process(delta: float) -> void:
 	var move_distance = speed * delta
 	move_along_path(move_distance)
 
+func set_look_direction(direction: Vector2):
+	look_at = direction
+	animation_tree.set("parameters/Idle/blend_position", look_at)
 
 func move_along_path(distance: float) -> void:
 	var start_point = position

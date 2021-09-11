@@ -1,0 +1,468 @@
+[gd_scene load_steps=52 format=2]
+
+[ext_resource path="res://src/Input/Input.gd" type="Script" id=1]
+[ext_resource path="res://src/Room/Room.gd" type="Script" id=2]
+[ext_resource path="res://src/Room/Position.gd" type="Script" id=3]
+[ext_resource path="res://src/Player/Player.gd" type="Script" id=4]
+[ext_resource path="res://assets/Sprites/Corruption/Under.png" type="Texture" id=5]
+[ext_resource path="res://assets/Sprites/Rooms/Act1/Kitchen/Room.png" type="Texture" id=6]
+[ext_resource path="res://assets/Sprites/Rooms/Act1/Kitchen/table.png" type="Texture" id=7]
+[ext_resource path="res://assets/Sprites/Characters/Father/Father.png" type="Texture" id=8]
+[ext_resource path="res://assets/Sprites/Inventory/itembar.png" type="Texture" id=9]
+[ext_resource path="res://assets/Sprites/Corruption/Progress.png" type="Texture" id=10]
+[ext_resource path="res://assets/Sprites/Corruption/Over.png" type="Texture" id=11]
+[ext_resource path="res://assets/Sprites/Insignia/Insignia.png" type="Texture" id=12]
+[ext_resource path="res://assets/Sprites/Characters/Mother/Mother_Sheet.png" type="Texture" id=13]
+[ext_resource path="res://src/Inventory/Inventory.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Room/Exit.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/Sprites/Rooms/Act1/Kitchen/Chair.png" type="Texture" id=16]
+[ext_resource path="res://src/Input/CommandProcessor.gd" type="Script" id=17]
+[ext_resource path="res://assets/Fonts/PressStart2P.ttf" type="DynamicFontData" id=18]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 251, 178, 404, 206, 84, 206, 183, 178, 84, 107, 183, 154, 219, 107, 219, 119, 251, 154, 245, 119, 404, 107, 245, 107 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 2, 4, 5 ), PoolIntArray( 5, 4, 6, 7 ), PoolIntArray( 8, 5, 7, 9 ), PoolIntArray( 10, 1, 0, 8 ), PoolIntArray( 11, 10, 8, 9 ) ]
+outlines = [ PoolVector2Array( 84, 107, 84, 206, 404, 206, 404, 107, 245, 107, 245, 119, 219, 119, 219, 107 ), PoolVector2Array( 183, 154, 183, 178, 251, 178, 251, 154 ) ]
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/Richard_Sheet.png-8305ab6b8d1b1e6ec1ee47cefca43a6f.stex"
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 7, 4 )
+
+[sub_resource type="Animation" id=4]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 1 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 4 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 7, 7 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 10, 10 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 1 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 4, 5, 4 ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 7 ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11, 10 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Idle_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "Idle_Down"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "Idle_Up"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "Idle_Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=16]
+blend_point_0/node = SubResource( 12 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 13 )
+blend_point_1/pos = Vector2( 0, 1 )
+blend_point_2/node = SubResource( 14 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 15 )
+blend_point_3/pos = Vector2( 1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "Move_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "Move_Up"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "Move_Down"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "Move_Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=21]
+blend_point_0/node = SubResource( 17 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 18 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 19 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 20 )
+blend_point_3/pos = Vector2( 1, 0 )
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachine" id=24]
+states/Idle/node = SubResource( 16 )
+states/Idle/position = Vector2( 432, 119 )
+states/Move/node = SubResource( 21 )
+states/Move/position = Vector2( 636, 119 )
+transitions = [ "Idle", "Move", SubResource( 22 ), "Move", "Idle", SubResource( 23 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=25]
+
+[sub_resource type="DynamicFont" id=26]
+size = 8
+font_data = ExtResource( 18 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.239216, 0.239216, 0.239216, 0.658824 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 8
+font_data = ExtResource( 18 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.239216, 0.239216, 0.239216, 0.658824 )
+
+[sub_resource type="DynamicFont" id=30]
+size = 8
+extra_spacing_top = 3
+font_data = ExtResource( 18 )
+
+[sub_resource type="StyleBoxEmpty" id=31]
+
+[sub_resource type="StyleBoxEmpty" id=32]
+
+[sub_resource type="DynamicFont" id=33]
+size = 8
+extra_spacing_top = 3
+font_data = ExtResource( 18 )
+
+[node name="Kitchen" type="Node"]
+script = ExtResource( 2 )
+
+[node name="CommandProcessor" type="Node" parent="."]
+script = ExtResource( 17 )
+
+[node name="Navigation" type="Navigation2D" parent="."]
+
+[node name="Room" type="Sprite" parent="Navigation"]
+position = Vector2( 244, 118 )
+texture = ExtResource( 6 )
+
+[node name="Collision" type="NavigationPolygonInstance" parent="Navigation"]
+navpoly = SubResource( 1 )
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="Fridge" type="Node2D" parent="Positions"]
+position = Vector2( 200, 112 )
+script = ExtResource( 3 )
+player_look_direction = Vector2( 0, -1 )
+
+[node name="Oven" type="Node2D" parent="Positions"]
+position = Vector2( 296, 112 )
+script = ExtResource( 3 )
+player_look_direction = Vector2( 0, -1 )
+
+[node name="Table" type="Node2D" parent="Positions"]
+position = Vector2( 216, 144 )
+script = ExtResource( 3 )
+player_look_direction = Vector2( 0, 1 )
+
+[node name="Floor" parent="Positions" instance=ExtResource( 15 )]
+position = Vector2( 88, 168 )
+next_room_name = "res://src/Room/Act1-Rooms/Floor.tscn"
+player_look_direction = Vector2( -1, 0 )
+player_next_room_look_direction = Vector2( 0, 1 )
+player_room_position = Vector2( 432, 167 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 106, 168 )
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Player"]
+texture = SubResource( 2 )
+offset = Vector2( 0, -16 )
+hframes = 3
+vframes = 4
+frame = 10
+
+[node name="Collision" type="CollisionShape2D" parent="YSort/Player"]
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/Player"]
+anims/Idle_Down = SubResource( 4 )
+anims/Idle_Left = SubResource( 5 )
+anims/Idle_Right = SubResource( 6 )
+anims/Idle_Up = SubResource( 7 )
+anims/Move_Down = SubResource( 8 )
+anims/Move_Left = SubResource( 9 )
+anims/Move_Right = SubResource( 10 )
+anims/Move_Up = SubResource( 11 )
+
+[node name="AnimationTree" type="AnimationTree" parent="YSort/Player"]
+tree_root = SubResource( 24 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 25 )
+parameters/Idle/blend_position = Vector2( 0.218997, -0.528926 )
+parameters/Move/blend_position = Vector2( 0, 0 )
+
+[node name="Mother" type="Sprite" parent="YSort"]
+position = Vector2( 232, 109 )
+texture = ExtResource( 13 )
+offset = Vector2( 0, -16 )
+hframes = 2
+vframes = 2
+frame = 3
+
+[node name="Father" type="Sprite" parent="YSort"]
+position = Vector2( 193, 159 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, -10 )
+
+[node name="Table" type="Sprite" parent="YSort"]
+position = Vector2( 221, 161 )
+texture = ExtResource( 7 )
+
+[node name="Chair" type="Sprite" parent="YSort"]
+position = Vector2( 241, 160 )
+texture = ExtResource( 16 )
+offset = Vector2( 0, -2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Corruption" type="TextureProgress" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -468.0
+margin_top = 12.0
+margin_right = -368.0
+margin_bottom = 35.0
+value = 70.0
+texture_under = ExtResource( 5 )
+texture_over = ExtResource( 11 )
+texture_progress = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Corruption"]
+margin_left = 4.0
+margin_top = 8.0
+margin_right = 20.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 26 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "69"
+
+[node name="Insignia" type="Label" parent="CanvasLayer"]
+margin_left = 409.0
+margin_top = 16.0
+margin_right = 449.0
+margin_bottom = 30.0
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = SubResource( 28 )
+text = "63"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Insignia"]
+margin_left = 33.0
+margin_top = -9.0
+margin_right = 65.0
+margin_bottom = 23.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomBar" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -102.0
+margin_top = -40.0
+margin_right = 102.0
+rect_min_size = Vector2( 204, 40 )
+custom_constants/separation = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputArea" type="PanelContainer" parent="CanvasLayer/BottomBar"]
+margin_right = 204.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 29 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BottomBar/InputArea"]
+margin_right = 204.0
+margin_bottom = 16.0
+custom_constants/separation = 5
+
+[node name="Caret" type="Label" parent="CanvasLayer/BottomBar/InputArea/HBoxContainer"]
+margin_top = 2.0
+margin_right = 16.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 30 )
+text = " >"
+
+[node name="Input" type="LineEdit" parent="CanvasLayer/BottomBar/InputArea/HBoxContainer"]
+margin_left = 21.0
+margin_right = 204.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/focus = SubResource( 31 )
+custom_styles/normal = SubResource( 32 )
+custom_fonts/font = SubResource( 33 )
+max_length = 20
+script = ExtResource( 1 )
+
+[node name="Itembar" type="NinePatchRect" parent="CanvasLayer/BottomBar"]
+margin_top = 18.0
+margin_right = 204.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 22 )
+texture = ExtResource( 9 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/BottomBar/Itembar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" parent="CanvasLayer/BottomBar/Itembar/CenterContainer" instance=ExtResource( 14 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 201.0
+margin_bottom = 20.0
+custom_constants/separation = 2
+
+[connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]
+[connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CommandProcessor" method="_on_Input_text_entered"]

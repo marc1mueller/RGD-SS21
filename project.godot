@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="RGD_Placeholder"
-run/main_scene="res://src/Room/Rooms/Room.tscn"
+run/main_scene="res://src/Room/Act1-Rooms/Kitchen.tscn"
 
 [autoload]
 
