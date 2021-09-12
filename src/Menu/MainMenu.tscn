@@ -17,7 +17,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-first_scene = "res://src/Room/Act1-Rooms/Kitchen.tscn"
+first_scene = "res://src/Room/Act1-Rooms/Living-Room.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 480.0

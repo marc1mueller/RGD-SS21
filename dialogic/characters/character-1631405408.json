@@ -1,0 +1,36 @@
+{
+	"color": "#ff3e0101",
+	"description": "This is Ana",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1631405408.json",
+	"mirror_portraits": false,
+	"name": "Ana",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 50,
+	"offset_y": -12,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://assets/Sprites/Characters/Ana/ana-default.png"
+		},
+		{
+			"name": "Evil",
+			"path": "res://assets/Sprites/Characters/Ana/ana-evil.png"
+		},
+		{
+			"name": "Happy",
+			"path": "res://assets/Sprites/Characters/Ana/ana-happy.png"
+		},
+		{
+			"name": "Yikes",
+			"path": "res://assets/Sprites/Characters/Ana/ana-yikes.png"
+		},
+		{
+			"name": "Annoyed",
+			"path": "res://assets/Sprites/Characters/Ana/ana-annoyed.png"
+		}
+	],
+	"scale": 100
+}

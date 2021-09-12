@@ -1,0 +1,64 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1631405408.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1631405408.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Who are you?"
+		},
+		{
+			"character": "character-1631405408.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "what are you doing here?"
+		},
+		{
+			"action": "join",
+			"character": "character-1631404915.json",
+			"event_id": "dialogic_002",
+			"mirror": true,
+			"portrait": "FatherPB",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": true,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1631404915.json",
+			"event_id": "dialogic_001",
+			"portrait": "(Don't change)",
+			"text": "i don't know!"
+		},
+		{
+			"character": "character-1631405408.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "Annoyed",
+			"question": "are you stupid?"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1631404890.json",
+		"name": "elternbabbeln"
+	}
+}

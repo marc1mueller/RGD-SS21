@@ -1,8 +1,7 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://src/Input/Input.gd" type="Script" id=1]
 [ext_resource path="res://src/Room/Room.gd" type="Script" id=2]
-[ext_resource path="res://src/Room/Position.gd" type="Script" id=3]
 [ext_resource path="res://src/Player/Player.gd" type="Script" id=4]
 [ext_resource path="res://assets/Sprites/Corruption/Under.png" type="Texture" id=5]
 [ext_resource path="res://assets/Sprites/Inventory/itembar.png" type="Texture" id=6]
@@ -14,11 +13,14 @@
 [ext_resource path="res://src/Inventory/Inventory.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/Input/CommandProcessor.gd" type="Script" id=13]
 [ext_resource path="res://assets/Fonts/PressStart2P.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://assets/Sprites/Rooms/Act1/Living Room/Couch.png" type="Texture" id=15]
+[ext_resource path="res://assets/Sprites/Rooms/Act1/Living Room/couchchair.png" type="Texture" id=16]
+[ext_resource path="res://assets/Sprites/Rooms/Act1/Living Room/room.png" type="Texture" id=17]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 192, 112, 192, 64, 480, 0, 480, 272, 0, 0, 64, 64, 0, 272, 64, 112 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 2, 1, 5 ), PoolIntArray( 6, 4, 5, 7 ), PoolIntArray( 3, 6, 7, 0 ) ]
-outlines = [ PoolVector2Array( 0, 0, 0, 272, 480, 272, 480, 0 ), PoolVector2Array( 64, 112, 64, 64, 192, 64, 192, 112 ) ]
+vertices = PoolVector2Array( 92, 127, 301, 127, 301, 157, 164, 157, 92, 223, 164, 184, 304, 223, 304, 184 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5 ), PoolIntArray( 6, 4, 5, 7 ) ]
+outlines = [ PoolVector2Array( 92, 127, 92, 223, 304, 223, 304, 184, 164, 184, 164, 157, 301, 157, 301, 127 ) ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12.146, 7.196 )
@@ -246,43 +248,41 @@ script = ExtResource( 13 )
 
 [node name="Navigation" type="Navigation2D" parent="."]
 
+[node name="Room" type="Sprite" parent="Navigation"]
+position = Vector2( 238, 126 )
+texture = ExtResource( 17 )
+
 [node name="Collision" type="NavigationPolygonInstance" parent="Navigation"]
-visible = false
 position = Vector2( -1, 0 )
 navpoly = SubResource( 1 )
 
 [node name="Positions" type="Node2D" parent="."]
 
-[node name="t1" type="Node2D" parent="Positions"]
-position = Vector2( 88, 56 )
-script = ExtResource( 3 )
+[node name="Couch" parent="Positions" instance=ExtResource( 11 )]
+position = Vector2( 234, 149 )
+next_room_name = "res://src/Room/Act1-Rooms/Portal-Room.tscn"
+player_look_direction = Vector2( 0, -1 )
+player_next_room_look_direction = Vector2( 0, -1 )
+player_room_position = Vector2( 243, 188 )
 
-[node name="t2" type="Node2D" parent="Positions"]
-position = Vector2( 376, 104 )
-script = ExtResource( 3 )
+[node name="YSort" type="YSort" parent="."]
 
-[node name="t3" type="Node2D" parent="Positions"]
-position = Vector2( 312, 200 )
-script = ExtResource( 3 )
-
-[node name="Exit" parent="Positions" instance=ExtResource( 11 )]
-position = Vector2( 8, 136 )
-
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 144, 152 )
+[node name="Player" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 242, 205 )
 script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="Player"]
+[node name="Sprite" type="Sprite" parent="YSort/Player"]
 texture = ExtResource( 7 )
+offset = Vector2( 0, -16 )
 hframes = 3
 vframes = 4
 frame = 10
 
-[node name="Collision" type="CollisionShape2D" parent="Player"]
+[node name="Collision" type="CollisionShape2D" parent="YSort/Player"]
 position = Vector2( 0.145996, 8.804 )
 shape = SubResource( 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/Player"]
 anims/Idle_Down = SubResource( 3 )
 anims/Idle_Left = SubResource( 4 )
 anims/Idle_Right = SubResource( 5 )
@@ -292,13 +292,21 @@ anims/Move_Left = SubResource( 8 )
 anims/Move_Right = SubResource( 9 )
 anims/Move_Up = SubResource( 10 )
 
-[node name="AnimationTree" type="AnimationTree" parent="Player"]
+[node name="AnimationTree" type="AnimationTree" parent="YSort/Player"]
 tree_root = SubResource( 23 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 24 )
 parameters/Idle/blend_position = Vector2( 0.218997, -0.528926 )
 parameters/Move/blend_position = Vector2( 0, 0 )
+
+[node name="Couch" type="Sprite" parent="YSort"]
+position = Vector2( 239, 162 )
+texture = ExtResource( 15 )
+
+[node name="CouchChair" type="Sprite" parent="YSort"]
+position = Vector2( 331, 143 )
+texture = ExtResource( 16 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -424,5 +432,5 @@ margin_right = 201.0
 margin_bottom = 20.0
 custom_constants/separation = 2
 
-[connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]
 [connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CommandProcessor" method="_on_Input_text_entered"]
+[connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]

@@ -277,7 +277,7 @@ player_room_position = Vector2( 105, 168 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 432, 167 )
+position = Vector2( 29, 189 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="YSort/Player"]
