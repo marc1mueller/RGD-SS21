@@ -4,9 +4,8 @@ extends MarginContainer
 export(String, FILE) var first_scene
 
 # Path to the Selector's
-onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/Selector_1
-onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/Selector_2
-onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Selector_3
+onready var selector_one = $Background/Menu/NewGame/HBoxContainer/Selector
+onready var selector_two = $Background/Menu/Exit/HBoxContainer/Selector
 
 var current_selection = 0
 
@@ -28,18 +27,13 @@ func handle_selection(_current_selection):
 	if _current_selection == 0:
 		SceneLoader.change_scene(first_scene, 'fade')
 	elif _current_selection == 1:
-		print("ToDo")
-	elif _current_selection == 2:
 		get_tree().quit()
 
 #Set Arrow on selected option
 func set_current_selection(_current_selection):
 	selector_one.text = ""
 	selector_two.text = ""
-	selector_three.text = ""
 	if _current_selection == 0:
 		selector_one.text = ">"
 	elif _current_selection == 1:
 		selector_two.text = ">"
-	elif _current_selection == 2:
-		selector_three.text = ">"

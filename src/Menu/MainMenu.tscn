@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Fonts/PressStart2P.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/Menu/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://to-import/titelbildschirm_worldofmadness.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -19,53 +20,48 @@ __meta__ = {
 }
 first_scene = "res://src/Room/Act1-Rooms/Living-Room.tscn"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 margin_right = 480.0
 margin_bottom = 270.0
-color = Color( 0.580392, 0.447059, 0.654902, 1 )
+texture = ExtResource( 3 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 480.0
-margin_bottom = 270.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 48.0
-margin_top = 90.0
-margin_right = 432.0
-margin_bottom = 180.0
-custom_constants/separation = 10
-
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 384.0
-margin_bottom = 24.0
-
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
-margin_right = 384.0
-margin_bottom = 24.0
+[node name="Title" type="Label" parent="Background"]
+margin_left = 23.9693
+margin_top = 33.2202
+margin_right = 221.969
+margin_bottom = 84.2202
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 0
-text = "World Of Madness"
+text = "World of Madness"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 34.0
-margin_right = 384.0
-margin_bottom = 90.0
+[node name="Menu" type="VBoxContainer" parent="Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -162.5
+margin_top = -49.0
+margin_right = -14.5
+margin_bottom = -13.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
-margin_left = 118.0
-margin_right = 266.0
-margin_bottom = 56.0
-
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+[node name="NewGame" type="CenterContainer" parent="Background/Menu"]
 margin_right = 148.0
 margin_bottom = 16.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/Menu/NewGame"]
 margin_right = 148.0
 margin_bottom = 16.0
 
-[node name="Selector_1" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+[node name="Selector" type="Label" parent="Background/Menu/NewGame/HBoxContainer"]
 margin_right = 16.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 16, 0 )
@@ -74,7 +70,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 0
 text = ">"
 
-[node name="Option1" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+[node name="Option" type="Label" parent="Background/Menu/NewGame/HBoxContainer"]
 margin_left = 20.0
 margin_right = 148.0
 margin_bottom = 16.0
@@ -84,19 +80,16 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 0
 text = "New Game"
 
-[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+[node name="Exit" type="CenterContainer" parent="Background/Menu"]
 margin_top = 20.0
 margin_right = 148.0
 margin_bottom = 36.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/Menu/Exit"]
 margin_right = 148.0
 margin_bottom = 16.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Selector_2" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
+[node name="Selector" type="Label" parent="Background/Menu/Exit/HBoxContainer"]
 margin_right = 16.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 16, 0 )
@@ -105,35 +98,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 0
 text = ">"
 
-[node name="Option2" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
-margin_left = 20.0
-margin_right = 148.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 128, 0 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 0
-text = "Options"
-
-[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
-margin_top = 40.0
-margin_right = 148.0
-margin_bottom = 56.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3"]
-margin_right = 148.0
-margin_bottom = 16.0
-
-[node name="Selector_3" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
-margin_right = 16.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 16, 0 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 0
-text = ">"
-
-[node name="Option3" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
+[node name="Option" type="Label" parent="Background/Menu/Exit/HBoxContainer"]
 margin_left = 20.0
 margin_right = 148.0
 margin_bottom = 16.0

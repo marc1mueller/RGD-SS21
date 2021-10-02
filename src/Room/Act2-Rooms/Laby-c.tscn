@@ -1,15 +1,11 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://src/Input/Input.gd" type="Script" id=1]
 [ext_resource path="res://src/Room/Room.gd" type="Script" id=2]
 [ext_resource path="res://src/Room/Position.gd" type="Script" id=3]
 [ext_resource path="res://src/Player/Player.gd" type="Script" id=4]
-[ext_resource path="res://assets/Sprites/Corruption/Under.png" type="Texture" id=5]
 [ext_resource path="res://assets/Sprites/Inventory/itembar.png" type="Texture" id=6]
 [ext_resource path="res://assets/Sprites/Characters/Richard/Richard_Sheet.png" type="Texture" id=7]
-[ext_resource path="res://assets/Sprites/Corruption/Progress.png" type="Texture" id=8]
-[ext_resource path="res://assets/Sprites/Corruption/Over.png" type="Texture" id=9]
-[ext_resource path="res://assets/Sprites/Insignia/Insignia.png" type="Texture" id=10]
 [ext_resource path="res://to-import/Labyrinth/numbers/laby25.png" type="Texture" id=11]
 [ext_resource path="res://src/Room/Exit.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/Inventory/Inventory.tscn" type="PackedScene" id=13]
@@ -211,30 +207,19 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=24]
 
-[sub_resource type="DynamicFont" id=25]
-size = 8
-font_data = ExtResource( 15 )
-
-[sub_resource type="StyleBoxFlat" id=26]
+[sub_resource type="StyleBoxFlat" id=25]
 bg_color = Color( 0.239216, 0.239216, 0.239216, 0.658824 )
 
-[sub_resource type="DynamicFont" id=27]
-size = 8
-font_data = ExtResource( 15 )
-
-[sub_resource type="StyleBoxFlat" id=28]
-bg_color = Color( 0.239216, 0.239216, 0.239216, 0.658824 )
-
-[sub_resource type="DynamicFont" id=29]
+[sub_resource type="DynamicFont" id=26]
 size = 8
 extra_spacing_top = 3
 font_data = ExtResource( 15 )
 
-[sub_resource type="StyleBoxEmpty" id=30]
+[sub_resource type="StyleBoxEmpty" id=27]
 
-[sub_resource type="StyleBoxEmpty" id=31]
+[sub_resource type="StyleBoxEmpty" id=28]
 
-[sub_resource type="DynamicFont" id=32]
+[sub_resource type="DynamicFont" id=29]
 size = 8
 extra_spacing_top = 3
 font_data = ExtResource( 15 )
@@ -319,52 +304,6 @@ parameters/Move/blend_position = Vector2( 0, 0 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Corruption" type="TextureProgress" parent="CanvasLayer"]
-margin_left = 12.0
-margin_top = 12.0
-margin_right = 216.0
-margin_bottom = 35.0
-value = 70.0
-texture_under = ExtResource( 5 )
-texture_over = ExtResource( 9 )
-texture_progress = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="CanvasLayer/Corruption"]
-margin_left = 4.0
-margin_top = 8.0
-margin_right = 20.0
-margin_bottom = 16.0
-custom_fonts/font = SubResource( 25 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "69"
-
-[node name="Insignia" type="Label" parent="CanvasLayer"]
-margin_left = 412.0
-margin_top = 16.0
-margin_right = 452.0
-margin_bottom = 30.0
-custom_styles/normal = SubResource( 26 )
-custom_fonts/font = SubResource( 27 )
-text = "63"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Icon" type="TextureRect" parent="CanvasLayer/Insignia"]
-margin_left = 30.0
-margin_top = -9.0
-margin_right = 62.0
-margin_bottom = 23.0
-texture = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="BottomBar" type="VBoxContainer" parent="CanvasLayer"]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -384,7 +323,7 @@ margin_right = 204.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 0, 16 )
 size_flags_horizontal = 3
-custom_styles/panel = SubResource( 28 )
+custom_styles/panel = SubResource( 25 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BottomBar/InputArea"]
 margin_right = 204.0
@@ -395,7 +334,7 @@ custom_constants/separation = 5
 margin_top = 2.0
 margin_right = 16.0
 margin_bottom = 13.0
-custom_fonts/font = SubResource( 29 )
+custom_fonts/font = SubResource( 26 )
 text = " >"
 
 [node name="Input" type="LineEdit" parent="CanvasLayer/BottomBar/InputArea/HBoxContainer"]
@@ -403,9 +342,9 @@ margin_left = 21.0
 margin_right = 204.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
-custom_styles/focus = SubResource( 30 )
-custom_styles/normal = SubResource( 31 )
-custom_fonts/font = SubResource( 32 )
+custom_styles/focus = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = SubResource( 29 )
 max_length = 20
 script = ExtResource( 1 )
 
