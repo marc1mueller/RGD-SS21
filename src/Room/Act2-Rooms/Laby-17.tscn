@@ -255,7 +255,7 @@ player_look_direction = Vector2( 0, -1 )
 
 [node name="East" parent="Positions" instance=ExtResource( 12 )]
 position = Vector2( 322, 109 )
-next_room_name = "res://src/Room/Act1-Rooms/Kitchen.tscn"
+next_room_name = "res://src/Room/Act1-Rooms/Living-Room.tscn"
 player_look_direction = Vector2( 1, 0 )
 player_next_room_look_direction = Vector2( 1, 0 )
 player_room_position = Vector2( 172, 109 )

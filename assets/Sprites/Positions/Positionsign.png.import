@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Under.png-bb0c9a66e8c3878da5e33128c4c96c89.stex"
+path="res://.import/Positionsign.png-54838b7555eb6dad263cf8b1e72eec9b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Corruption/Under.png"
-dest_files=[ "res://.import/Under.png-bb0c9a66e8c3878da5e33128c4c96c89.stex" ]
+source_file="res://assets/Sprites/Positions/Positionsign.png"
+dest_files=[ "res://.import/Positionsign.png-54838b7555eb6dad263cf8b1e72eec9b.stex" ]
 
 [params]
 

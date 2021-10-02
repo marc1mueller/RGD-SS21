@@ -1,9 +1,10 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://src/Input/Input.gd" type="Script" id=1]
 [ext_resource path="res://src/Room/Room.gd" type="Script" id=2]
 [ext_resource path="res://src/Room/Position.gd" type="Script" id=3]
 [ext_resource path="res://src/Player/Player.gd" type="Script" id=4]
+[ext_resource path="res://src/Room/PositionSign.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/Sprites/Rooms/Act1/Kitchen/Room.png" type="Texture" id=6]
 [ext_resource path="res://assets/Sprites/Rooms/Act1/Kitchen/table.png" type="Texture" id=7]
 [ext_resource path="res://assets/Sprites/Characters/Father/Father.png" type="Texture" id=8]
@@ -400,6 +401,34 @@ margin_top = 2.0
 margin_right = 201.0
 margin_bottom = 20.0
 custom_constants/separation = 2
+
+[node name="PositionSign" parent="CanvasLayer" instance=ExtResource( 5 )]
+margin_left = 198.0
+margin_top = 42.0
+margin_right = -205.0
+margin_bottom = -178.0
+text = "Fridge"
+
+[node name="PositionSign2" parent="CanvasLayer" instance=ExtResource( 5 )]
+margin_left = 222.0
+margin_top = 101.0
+margin_right = -181.0
+margin_bottom = -119.0
+text = "Table"
+
+[node name="PositionSign3" parent="CanvasLayer" instance=ExtResource( 5 )]
+margin_left = 299.0
+margin_top = 51.0
+margin_right = -104.0
+margin_bottom = -169.0
+text = "Oven"
+
+[node name="PositionSign4" parent="CanvasLayer" instance=ExtResource( 5 )]
+margin_left = 75.0
+margin_top = 117.0
+margin_right = -328.0
+margin_bottom = -103.0
+text = "Floor"
 
 [connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]
 [connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CommandProcessor" method="_on_Input_text_entered"]

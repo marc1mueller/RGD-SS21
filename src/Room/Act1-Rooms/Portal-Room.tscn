@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://src/Input/Input.gd" type="Script" id=1]
 [ext_resource path="res://src/Room/Room.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/Sprites/Rooms/Act1/Portal Room/portal_room1.png" type="Texture" id=7]
 [ext_resource path="res://assets/Sprites/Rooms/Act1/Portal Room/portal_room5.png" type="Texture" id=8]
 [ext_resource path="res://assets/Sprites/Inventory/itembar.png" type="Texture" id=9]
+[ext_resource path="res://src/Room/PositionSign.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Inventory/Inventory.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Room/Exit.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Input/CommandProcessor.gd" type="Script" id=17]
@@ -249,6 +250,7 @@ script = ExtResource( 17 )
 position = Vector2( 244, 118 )
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 4
 playing = true
 
 [node name="Collision" type="NavigationPolygonInstance" parent="Navigation"]
@@ -372,6 +374,13 @@ margin_top = 2.0
 margin_right = 201.0
 margin_bottom = 20.0
 custom_constants/separation = 2
+
+[node name="PositionSign" parent="CanvasLayer" instance=ExtResource( 10 )]
+margin_left = 288.0
+margin_top = 40.0
+margin_right = -115.0
+margin_bottom = -180.0
+text = "Portal"
 
 [connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]
 [connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CommandProcessor" method="_on_Input_text_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://src/Input/Input.gd" type="Script" id=1]
 [ext_resource path="res://src/Room/Room.gd" type="Script" id=2]
+[ext_resource path="res://src/Room/PositionSign.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Player/Player.gd" type="Script" id=4]
 [ext_resource path="res://assets/Sprites/Inventory/itembar.png" type="Texture" id=6]
 [ext_resource path="res://assets/Sprites/Characters/Richard/Richard_Sheet.png" type="Texture" id=7]
@@ -368,6 +369,13 @@ margin_top = 2.0
 margin_right = 201.0
 margin_bottom = 20.0
 custom_constants/separation = 2
+
+[node name="PositionSign" parent="CanvasLayer" instance=ExtResource( 3 )]
+margin_left = 259.0
+margin_top = 88.0
+margin_right = -144.0
+margin_bottom = -132.0
+text = "Couch"
 
 [connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]
 [connection signal="text_entered" from="CanvasLayer/BottomBar/InputArea/HBoxContainer/Input" to="CommandProcessor" method="_on_Input_text_entered"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Insignia.png-346efc2aa39c79c371f6b8d8444a4f68.stex"
+path="res://.import/titelbildschirm_worldofmadness.png-7e37ea10f42f43fc4ff068f3d9e231b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Insignia/Insignia.png"
-dest_files=[ "res://.import/Insignia.png-346efc2aa39c79c371f6b8d8444a4f68.stex" ]
+source_file="res://to-import/titelbildschirm_worldofmadness.png"
+dest_files=[ "res://.import/titelbildschirm_worldofmadness.png-7e37ea10f42f43fc4ff068f3d9e231b8.stex" ]
 
 [params]
 
